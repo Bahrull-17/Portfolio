@@ -60,8 +60,8 @@
           </div>
         </div>
         <!-- ID Card Mockup Pasfoto untuk HRD -->
-        <div class="md:col-span-4 hidden md:block">
-          <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/50 text-center space-y-4">
+        <div class="col-span-1 md:col-span-4 order-first md:order-none">
+          <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/50 text-center space-y-4 shadow-sm hover:shadow-md transition duration-300">
             <div class="w-24 h-24 rounded-full mx-auto overflow-hidden border border-slate-200">
               <img src="bahrul.jpeg" alt="Bahrul ulum" class="w-full h-full object-cover" />
             </div>
@@ -268,52 +268,65 @@
       </div>
     </section>
     <!-- FORM HUBUGNI SAYA / HUBUNGAN HRD (CONTACT) -->
-    <section id="contact" class="py-20 max-w-2xl mx-auto px-6">
-      <div class="text-center mb-12">
+    <section id="contact" class="py-16 max-w-2xl mx-auto px-4 sm:px-6">
+      <!-- HEADER -->
+      <div class="text-center mb-10">
         <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">03 / Informasi Kontak</h2>
-        <h3 class="text-2xl font-bold tracking-tight text-zinc-900">Mari Berdiskusi Lebih Lanjut</h3>
-        <p class="text-sm text-zinc-400 font-light mt-2">Kirim pesan langsung atau hubungi melalui saluran profesional di bawah ini.</p>
+        <h3 class="text-2xl font-extrabold tracking-tight text-zinc-900 sm:text-3xl">Mari Berdiskusi Lebih Lanjut</h3>
+        <p class="text-sm text-zinc-400 font-light mt-2 max-w-md mx-auto">Kirim undangan interview atau penawaran kerja secara formal langsung ke kontak saya.</p>
       </div>
 
-      <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
-        <form class="space-y-4">
+      <!-- FORM CARD -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+        <form id="formalContactForm" class="space-y-5">
+          <!-- INPUT NAMA & EMAIL -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="space-y-1">
-              <label class="text-xs font-semibold text-zinc-600">Nama Perusahaan / Rekruter</label>
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-zinc-700 tracking-wide uppercase">Nama Perusahaan / Rekruter</label>
               <input
+                id="formCompany"
                 type="text"
                 required
-                class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:bg-white transition-colors"
+                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:bg-white transition-all duration-200"
                 placeholder="Contoh: PT. Maju Bersama"
               />
             </div>
 
-            <div class="space-y-1">
-              <label class="text-xs font-semibold text-zinc-600">Email Korespondensi</label>
+            <div class="space-y-1.5">
+              <label class="text-xs font-bold text-zinc-700 tracking-wide uppercase">Email Korespondensi</label>
               <input
+                id="formEmail"
                 type="email"
                 required
-                class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:bg-white transition-colors"
+                class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:bg-white transition-all duration-200"
                 placeholder="hrd@perusahaan.com"
               />
             </div>
           </div>
 
-          <div class="space-y-1">
-            <label class="text-xs font-semibold text-zinc-600">Pesan / Undangan Interview</label>
+          <!-- TEXTAREA PESAN -->
+          <div class="space-y-1.5">
+            <label class="text-xs font-bold text-zinc-700 tracking-wide uppercase">Pesan / Undangan Interview</label>
             <textarea
+              id="formMessage"
               rows="4"
               required
-              class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:bg-white transition-colors resize-none"
-              placeholder="Tulis penawaran posisi kerja atau pesan Anda di sini..."
+              class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:bg-white transition-all duration-200 resize-none"
+              placeholder="Tulis detail penawaran posisi kerja, lokasi, atau pesan Anda di sini..."
             ></textarea>
           </div>
 
-          <button type="submit" class="w-full py-2.5 bg-blue-600 text-white rounded-md font-semibold text-xs tracking-wider uppercase hover:bg-blue-700 transition-all shadow-sm shadow-blue-600/10">KIRIM PESAN FORMAL</button>
+          <!-- BUTTON SUBMIT (Efek Interaktif & Menggembung Lembut) -->
+          <button
+            type="submit"
+            class="w-full py-3 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white rounded-lg font-bold text-xs tracking-wider uppercase transition-all duration-200 shadow-lg shadow-blue-600/10 flex items-center justify-center gap-2"
+          >
+            <span>KIRIM PESAN FORMAL VIA EMAIL</span>
+            <i class="fa-solid fa-paper-plane text-[10px]"></i>
+          </button>
         </form>
       </div>
     </section>
-
     <!-- SIMPLE CORPORATE FOOTER -->
     <footer class="bg-zinc-900 py-8 border-t border-zinc-800 text-[11px] text-zinc-400 tracking-wide">
       <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -336,6 +349,33 @@
 
       menu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => menu.classList.add("hidden"));
+      });
+
+      document.getElementById("formalContactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Mencegah reload halaman
+
+        // Ambil data inputan dari form
+        const company = document.getElementById("formCompany").value;
+        const emailHRD = document.getElementById("formEmail").value;
+        const message = document.getElementById("formMessage").value;
+
+        // Alamat email tujuan kamu
+        const myEmail = "Bahrull375@gmail.com";
+
+        // Struktur teks Subject dan Isi Email Formal otomatis
+        const subject = encodeURIComponent(`Penawaran Kerja / Undangan Interview - ${company}`);
+        const body = encodeURIComponent(
+          `Yth. Bahrul Ulum,\n\n` +
+            `Perkenalkan, saya dari ${company} (Email Korespondensi: ${emailHRD}).\n\n` +
+            `Berikut pesan dan detail undangan resmi untuk Anda:\n` +
+            `"${message}"\n\n` +
+            `Mohon periksa kiriman ini dan kami tunggu konfirmasi ketersediaan Anda.\n\n` +
+            `Salam hangat,\n` +
+            `${company}`,
+        );
+
+        // Eksekusi membuka aplikasi email klien (Outlook/Gmail/Mail iOS) dengan teks otomatis
+        window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
       });
     </script>
   </body>
