@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bahrul Ulum — Web Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter (Standar Font Profesional Korporat & Startup Global) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome untuk Icon Representatif -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-zinc-800 antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-700">
+    <!-- STANDARD BUSINESS NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="text-sm font-bold tracking-tight text-zinc-900 flex items-center gap-2"> <span class="w-2.5 h-2.5 rounded-full bg-green-600"></span> BAHRUL ULUM </a>
+
+        <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-zinc-500 tracking-wide">
+          <a href="#about" class="hover:text-blue-600 transition-colors">Tentang</a>
+          <a href="#skills" class="hover:text-blue-600 transition-colors">Keahlian</a>
+          <a href="#projects" class="hover:text-blue-600 transition-colors">Proyek Pilihan</a>
+          <a href="#contact" class="px-3.5 py-1.5 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-sm shadow-blue-600/10"> Hubungi Saya </a>
+        </nav>
+
+        <button id="nav-btn" class="md:hidden text-zinc-600 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 text-xs font-medium text-zinc-600">
+        <a href="#about" class="block py-1 hover:text-blue-600">Tentang</a>
+        <a href="#skills" class="block py-1 hover:text-blue-600">Keahlian</a>
+        <a href="#projects" class="block py-1 hover:text-blue-600">Proyek Pilihan</a>
+        <a href="#contact" class="block py-2 text-center bg-blue-600 text-white rounded font-semibold">Hubungi Saya</a>
+      </div>
+    </header>
+
+    <!-- CLEAN HERO SECTION -->
+    <section class="min-h-[85vh] flex items-center bg-white border-b border-slate-200 px-6 pt-16">
+      <div class="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-blue-50 text-xs font-medium text-blue-700">Junior Web Developer</div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">Membangun Aplikasi Web yang Struktural, Aman, dan Efisien.</h1>
+          <p class="text-base text-zinc-500 font-light leading-relaxed max-w-2xl">
+            Halo, saya Bahrul Ulum. Seorang pengembang web backend & full-stack junior yang berfokus pada efisiensi baris kode, normalisasi database, dan implementasi framework modern untuk menghasilkan solusi sistem siap pakai.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#projects" class="px-5 py-2.5 bg-blue-600 text-white rounded-md text-xs font-semibold hover:bg-blue-700 transition-all shadow-sm shadow-blue-600/10"> Lihat Portofolio </a>
+            <a href="Bahrul-Ulum-CV.pdf" download class="px-5 py-2.5 bg-blue-600 text-white rounded-md text-xs font-semibold hover:bg-blue-700 transition-all shadow-sm shadow-blue-600/10"> Unduh CV </a>
+          </div>
+        </div>
+        <!-- ID Card Mockup Pasfoto untuk HRD -->
+        <div class="md:col-span-4 hidden md:block">
+          <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/50 text-center space-y-4">
+            <div class="w-24 h-24 rounded-full mx-auto overflow-hidden border border-slate-200">
+              <img src="bahrul.jpeg" alt="Bahrul ulum" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-zinc-900">Bahrul Ulum</h4>
+              <p class="text-xs text-zinc-400">Web Developer Portfolio</p>
+            </div>
+            <div class="text-[11px] text-zinc-500 space-y-1 font-mono bg-white border border-slate-200 py-2 rounded-lg">
+              <p>Status: Siap Bekerja</p>
+              <p>Lokasi: Indonesia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TENTANG & MATRIKS KEAHLIAN -->
+    <section id="about" class="py-20 max-w-4xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-4">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">01 / Profil Ringkas</h2>
+          <h3 class="text-xl font-bold text-zinc-900 tracking-tight">Komitmen pada Kualitas Kode</h3>
+        </div>
+        <div class="md:col-span-8 space-y-6 text-zinc-600 text-sm leading-relaxed font-light">
+          <p>Berfokus pada Web Development dengan pemahaman siklus pengembangan perangkat lunak, mulai dari perancangan database (ERD) hingga implementasi backend.</p>
+          <p>Terbiasa menulis kode yang bersih, terstruktur, dan mudah dipelihara sesuai praktik industri, serta siap beradaptasi dalam lingkungan kerja tim yang agile.</p>
+        </div>
+      </div>
+
+      <!-- SKILLS COMPONENT -->
+      <div id="skills" class="mt-16 pt-12 border-t border-slate-200">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-6 text-center sm:text-left">Matriks Kompetensi Teknis</h4>
+
+        <!-- GRID RESPONSIF: 2 Kolom di HP, 3 Kolom di Tablet (sm), 4 Kolom di Laptop (md) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <!-- HTML -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-orange-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-orange-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-brands fa-html5 text-orange-500"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">HTML</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">Semantic Structure, Form, Layout</p>
+          </div>
+
+          <!-- TAILWIND CSS -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-sky-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-sky-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-brands fa-css3-alt text-sky-500"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">Tailwind CSS</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">Responsive, Utility Classes</p>
+          </div>
+
+          <!-- JAVASCRIPT -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-yellow-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-yellow-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-brands fa-js text-yellow-500"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">JavaScript</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">DOM, Event, Basic Logic</p>
+          </div>
+
+          <!-- LARAVEL CORE -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-red-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-red-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-brands fa-laravel text-red-600"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">Laravel Core</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">MVC, Routing, Eloquent</p>
+          </div>
+
+          <!-- PHP -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-indigo-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-indigo-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-brands fa-php text-indigo-500"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">PHP</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">Backend Logic, CRUD, API Basics</p>
+          </div>
+
+          <!-- MYSQL BASIS DATA -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-emerald-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-emerald-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-solid fa-database text-emerald-600"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">MySQL Basis Data</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">Relasi, Indeks, CRUD</p>
+          </div>
+
+          <!-- GIT VERSION CONTROL -->
+          <div class="group p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-orange-500/30 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+            <div class="text-xl mb-3 bg-orange-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform duration-300">
+              <i class="fa-brands fa-git-alt text-orange-500"></i>
+            </div>
+            <h5 class="text-xs font-bold text-zinc-900 mb-1">Git Version Control</h5>
+            <p class="text-[11px] text-zinc-400 leading-normal">Branching, Commit, GitHub</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYEK PILIHAN (PORTFOLIO CASE STUDY) -->
+    <section id="projects" class="py-20 bg-white border-y border-slate-200">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-12">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">02 / Studi Kasus Proyek</h2>
+          <h3 class="text-xl font-bold text-zinc-900 tracking-tight">Implementasi Aplikasi Riil</h3>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Project Utama (Sistem Informasi Sewa Alat Berat) -->
+          <div class="border border-slate-200 rounded-xl bg-slate-50/30 p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-8 space-y-4">
+              <span class="inline-block text-[10px] font-semibold tracking-wider uppercase bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded"> Proyek Unggulan / Tugas Akhir </span>
+              <h4 class="text-xl font-bold tracking-tight text-zinc-900">Sistem Informasi Manajemen Penyewaan Alat Berat</h4>
+              <p class="text-zinc-500 font-light text-xs sm:text-sm leading-relaxed">
+                Aplikasi pemantauan operasional logistik alat berat yang dirancang untuk efisiensi bisnis. Sistem ini mencakup modul pelacakan ketersediaan unit mesin, manajemen transaksi otomatis, kontrol validasi data sewa, serta
+                penyimpanan relasional yang terstruktur rapi untuk meminimalkan redundansi data.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] text-zinc-500 font-mono pt-2">
+                <span class="bg-white border border-slate-200 px-2 py-0.5 rounded">Laravel</span>
+                <span class="bg-white border border-slate-200 px-2 py-0.5 rounded">MySQL Relational</span>
+                <span class="bg-white border border-slate-200 px-2 py-0.5 rounded">Tailwind CSS</span>
+              </div>
+            </div>
+            <!-- Mockup Visual Simpel & Elegan -->
+            <div class="md:col-span-4 h-44 bg-zinc-900 border border-zinc-800 rounded-lg p-5 flex flex-col justify-between text-white font-mono text-[10px]">
+              <div class="flex items-center justify-between text-zinc-500 border-b border-zinc-800 pb-2">
+                <span>SYSTEM_PREVIEW</span>
+                <div class="flex space-x-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                </div>
+              </div>
+              <div class="text-blue-400">// Menghubungkan entitas alat berat secara aman dan efisien</div>
+              <div class="text-zinc-400 text-right">[Status: Teruji]</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/30 space-y-3">
+              <!-- Proyek Sampingan Grid Kecil -->
+              <span class="text-[10px] font-mono text-zinc-400">[ PROYEK_02 ]</span>
+              <h5 class="font-bold text-zinc-900">Integrasi REST API Aplikasi</h5>
+              <p class="text-zinc-500 font-light text-xs leading-relaxed">Pengembangan dan penyusunan struktur routing endpoint data asinkronus yang aman untuk mendukung komunikasi data eksternal aplikasi yang lancar.</p>
+            </div>
+            <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/30 space-y-3">
+              <span class="text-[10px] font-mono text-zinc-400">[ PROYEK_03 ]</span>
+              <h5 class="font-bold text-zinc-900">Modul Transaksi E-Commerce</h5>
+              <p class="text-zinc-500 font-light text-xs leading-relaxed">Perancangan arsitektur tabel relasional database terintegrasi yang dioptimalkan dengan indeks untuk memastikan proses CRUD transaksi berjalan aman.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT QUICK -->
+    <section id="contact-quick" class="mt-12 pt-8 border-t border-slate-200">
+      <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-6 text-center">Contact</h4>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+        <!-- EMAIL (Hover: Border Biru + Geser Ke Atas) -->
+        <a href="mailto:Bahrull375@gmail.com" class="group block p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500/50 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left">
+          <div class="text-blue-600 text-xl mb-2 bg-blue-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h5 class="text-xs font-bold text-zinc-900 mb-0.5">Email</h5>
+          <p class="text-[11px] text-zinc-400 leading-tight">Respons 1–2 hari kerja</p>
+        </a>
+
+        <!-- WHATSAPP (Ada Animasi Ping / Titik Online Berdenyut) -->
+        <a
+          href="https://wa.me/6287737733144"
+          target="_blank"
+          class="group block p-4 bg-white border border-slate-200 rounded-xl hover:border-green-500/50 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left relative overflow-hidden"
+        >
+          <!-- Indikator Online -->
+          <span class="absolute top-3 right-3 flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+
+          <div class="text-green-600 text-xl mb-2 bg-green-50 w-9 h-9 flex items-center justify-center rounded-lg group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h5 class="text-xs font-bold text-zinc-900 mb-0.5">WhatsApp</h5>
+          <p class="text-[11px] text-zinc-400 leading-tight">Respon cepat</p>
+        </a>
+
+        <!-- LINKEDIN (Hover: Border Sky Blue + Geser Ke Atas) -->
+        <a
+          href="https://www.linkedin.com/in/bahrul-ulum17"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block p-4 bg-white border border-slate-200 rounded-xl hover:border-sky-500/50 hover:bg-sky-50/20 hover:-translate-y-1 hover:shadow-md active:scale-95 transition-all duration-300 text-left col-span-2 sm:col-span-1 cursor-pointer"
+        >
+          <div class="text-sky-500 text-xl mb-3 bg-sky-50 w-10 h-10 flex items-center justify-center rounded-lg group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+
+          <h5 class="text-sm font-bold text-zinc-900 mb-1">LinkedIn</h5>
+
+          <p class="text-xs text-zinc-400 leading-relaxed">Profil profesional dan koneksi karier</p>
+        </a>
+      </div>
+    </section>
+    <!-- FORM HUBUGNI SAYA / HUBUNGAN HRD (CONTACT) -->
+    <section id="contact" class="py-20 max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">03 / Informasi Kontak</h2>
+        <h3 class="text-2xl font-bold tracking-tight text-zinc-900">Mari Berdiskusi Lebih Lanjut</h3>
+        <p class="text-sm text-zinc-400 font-light mt-2">Kirim pesan langsung atau hubungi melalui saluran profesional di bawah ini.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label class="text-xs font-semibold text-zinc-600">Nama Perusahaan / Rekruter</label>
+              <input
+                type="text"
+                required
+                class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:bg-white transition-colors"
+                placeholder="Contoh: PT. Maju Bersama"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-xs font-semibold text-zinc-600">Email Korespondensi</label>
+              <input
+                type="email"
+                required
+                class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:bg-white transition-colors"
+                placeholder="hrd@perusahaan.com"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label class="text-xs font-semibold text-zinc-600">Pesan / Undangan Interview</label>
+            <textarea
+              rows="4"
+              required
+              class="w-full bg-slate-50 border border-slate-200 rounded-md px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500 focus:bg-white transition-colors resize-none"
+              placeholder="Tulis penawaran posisi kerja atau pesan Anda di sini..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-2.5 bg-blue-600 text-white rounded-md font-semibold text-xs tracking-wider uppercase hover:bg-blue-700 transition-all shadow-sm shadow-blue-600/10">KIRIM PESAN FORMAL</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SIMPLE CORPORATE FOOTER -->
+    <footer class="bg-zinc-900 py-8 border-t border-zinc-800 text-[11px] text-zinc-400 tracking-wide">
+      <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Bahrul Ulum. Dokumen Portofolio Profesional Web Developer.</p>
+        <div class="flex space-x-6">
+          <a href="https://github.com/Bahrull-17" class="hover:text-white transition-colors"><i class="fa-brands fa-github text-sm mr-1"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/bahrul-ulum17" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-sm mr-1"></i> LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MOBILE NAVIGATION CONTROLLER -->
+    <script>
+      const navBtn = document.getElementById("nav-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      navBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => menu.classList.add("hidden"));
+      });
+    </script>
+  </body>
+</html>
