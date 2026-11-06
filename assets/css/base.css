@@ -1,0 +1,33 @@
+/* Base — gaya global halaman */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* anchor tidak tertutup navbar fixed */
+  overflow-x: hidden;
+  overflow-x: clip; /* cegah scroll horizontal di HP akibat animasi geser */
+}
+html.is-loading { overflow: hidden; } /* kunci scroll selama intro */
+
+body { background-color: #0a050a; }
+.bg-red-theme {
+  background:
+    radial-gradient(circle at 50% 15%, rgba(160, 40, 70, 0.55), transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(60, 10, 30, 0.85), transparent 60%),
+    #3b070c;
+}
+
+#hamburger { position: relative; z-index: 2000; cursor: pointer; pointer-events: auto; }
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.35) inset !important;
+  -webkit-text-fill-color: #f2f2f2 !important;
+  caret-color: #f2f2f2;
+  transition: background-color 5000s ease-in-out 0s;
+}

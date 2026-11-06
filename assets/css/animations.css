@@ -1,0 +1,55 @@
+/* Animations — intro, orbit, dan scroll-reveal */
+
+/* ---------- Intro ---------- */
+@keyframes slideUp    { from { opacity: 0; transform: translateY(40px); }  to { opacity: 1; transform: translateY(0); } }
+@keyframes slideDown  { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideLeft  { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(40px); }  to { opacity: 1; transform: translateX(0); } }
+
+.anim-up    { animation: slideUp 1.2s ease-out forwards;    opacity: 0; }
+.anim-down  { animation: slideDown 1.2s ease-out forwards;  opacity: 0; }
+.anim-left  { animation: slideLeft 1.2s ease-out forwards;  opacity: 0; }
+.anim-right { animation: slideRight 1.2s ease-out forwards; opacity: 0; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin 20s linear infinite; }
+
+/* ---------- Scroll reveal ----------
+   Pakai atribut data-reveal="up|down|left|right|zoom|fade".
+   Memakai properti `translate`/`scale` (bukan `transform`) supaya tidak
+   bentrok dengan hover:scale / hover:-translate Tailwind di card. */
+.reveal-on [data-reveal]:not(.is-visible) { opacity: 0; }
+
+.reveal-on [data-reveal].is-visible {
+  --reveal-distance: 36px;
+  animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) both;
+}
+.reveal-on [data-reveal="down"].is-visible  { animation-name: reveal-down; }
+.reveal-on [data-reveal="left"].is-visible  { animation-name: reveal-left; }
+.reveal-on [data-reveal="right"].is-visible { animation-name: reveal-right; }
+.reveal-on [data-reveal="zoom"].is-visible  { animation-name: reveal-zoom; }
+.reveal-on [data-reveal="fade"].is-visible  { animation-name: reveal-fade; }
+
+@keyframes reveal-up    { from { opacity: 0; translate: 0 var(--reveal-distance); }          to { opacity: 1; translate: 0 0; } }
+@keyframes reveal-down  { from { opacity: 0; translate: 0 calc(var(--reveal-distance) * -1); } to { opacity: 1; translate: 0 0; } }
+@keyframes reveal-left  { from { opacity: 0; translate: -56px 0; }                           to { opacity: 1; translate: 0 0; } }
+@keyframes reveal-right { from { opacity: 0; translate: 56px 0; }                            to { opacity: 1; translate: 0 0; } }
+@keyframes reveal-zoom  { from { opacity: 0; scale: 0.92; }                                  to { opacity: 1; scale: 1; } }
+@keyframes reveal-fade  { from { opacity: 0; }                                               to { opacity: 1; } }
+
+/* HP & tablet: layout menumpuk, jadi geser samping diganti geser naik */
+@media (max-width: 1023px) {
+  .reveal-on [data-reveal="left"].is-visible,
+  .reveal-on [data-reveal="right"].is-visible { animation-name: reveal-up; }
+}
+@media (max-width: 640px) {
+  .reveal-on [data-reveal].is-visible { --reveal-distance: 24px; animation-duration: 0.7s; }
+}
+
+/* Hormati pengaturan "kurangi gerakan" di perangkat */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .anim-up, .anim-down, .anim-left, .anim-right { animation: none; opacity: 1; }
+  .animate-spin-slow { animation: none; }
+  .reveal-on [data-reveal] { opacity: 1 !important; animation: none !important; }
+}
